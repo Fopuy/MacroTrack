@@ -5,4 +5,4 @@ router.get('/', (req, res) => {
     res.send("Hello Kalibutan");
 })
 
-export default router;``
+export default router;
