@@ -1,15 +1,15 @@
 import express from "express";
 const app = express();
 import indexRouter from './routers/indexRouter.js'
-import addMeal from "./routers/addMeal.js";
+import addMealRouter from './routers/addMealRouter.js'
 import cors from 'cors'
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors())
 
-app.use("/api", indexRouter)
-app.use("/api/addmeal", addMeal)
+app.use("/api/index", indexRouter)
+app.use("/api/addmeal", addMealRouter)
 
 const PORT = process.env.PORT;
 app.listen(3000, () => {
