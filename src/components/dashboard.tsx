@@ -32,7 +32,10 @@ export function Dashboard() {
     return (
         <>
         <div className = "bg-gray-50 min-h-screen">
-            <div className = "mx-auto px-4 py-8 max-w-md">
+            <div className = "relative mx-auto px-4 py-8 max-w-md">
+                <div className="absolute top-8 right-5 w-12 text-5xl cursor-pointer bg-amber-200 rounded-full aspect-square flex items-center justify-center">
+                    <a href="/addmeal">+</a>
+                </div>
                 <section className = "not-even:mb-8">
                     <h1 className="text-2xl font-bold tex-gray-800 mb-6">Today's Nutrition</h1>
                     <ProgressBar dailyCalories={dailyCalories}/>
