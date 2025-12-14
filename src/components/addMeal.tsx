@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { useNavigate } from 'react-router';
 
 export function AddMeal(){
   const [name, setName] = useState('');
@@ -6,9 +7,14 @@ export function AddMeal(){
   const [protein, setProtein] = useState('');
   const [fat, setFat] = useState('');
   const [carbs, setCarbs] = useState('');
+  const navigate=useNavigate();
 
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if(!name || !calories || !protein || !fat || !carbs){
+      alert("Please fill in all fields");
+      return;
+    }
     const caloriesNum = parseInt(calories)
     const proteinNum = parseInt(protein)
     const fatNum = parseInt(fat)
@@ -33,6 +39,7 @@ export function AddMeal(){
     setProtein('')
     setFat('')
     setCarbs('')
+    navigate("/");
     }
 
     return (
