@@ -16,7 +16,7 @@ export function Dashboard() {
 
     useEffect(() => {
         const fetchMeal = async () => {
-        const res = await fetch('http://localhost:3000/api/index', {
+        const res = await fetch('https://macrotrack.onrender.com/api/index', {
         method: "GET",
         });
         const data = await res.json();
