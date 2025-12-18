@@ -25,10 +25,10 @@ export function Dashboard() {
         fetchMeal();
     },[])
 
-    const dailyCalories = meal.reduce((total: number, meal: Meal) => total + meal.calories, 0);
-    const dailyProtein = meal.reduce((total: number, meal: Meal) => total + meal.protein, 0);
-    const dailyFat = meal.reduce((total: number, meal: Meal) => total + meal.fat, 0);
-    const dailyCarbs = meal.reduce((total: number, meal: Meal) => total + meal.carbs, 0);
+    const dailyCalories = meal.reduce((total, meal) => total + meal.calories, 0);
+    const dailyProtein = meal.reduce((total, meal) => total + meal.protein, 0);
+    const dailyFat = meal.reduce((total, meal) => total + meal.fat, 0);
+    const dailyCarbs = meal.reduce((total, meal) => total + meal.carbs, 0);
     const progress = Math.min(dailyCalories / calorieGoal, 1) * 100
 
     return (
