@@ -16,12 +16,12 @@ export function Dashboard() {
 
     useEffect(() => {
         const fetchMeal = async () => {
-        const res = await fetch('https://macrotrack.onrender.com/api/index', {
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/index`, {
         method: "GET",
         });
         const data = await res.json();
         setMeal(data);
-    }
+    }   
         fetchMeal();
     },[])
 

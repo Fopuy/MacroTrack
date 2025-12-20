@@ -19,7 +19,7 @@ export function AddMeal(){
     const proteinNum = parseInt(protein)
     const fatNum = parseInt(fat)
     const carbsNum = parseInt(carbs)
-    const res = await fetch('https://macrotrack.onrender.com/api/addmeal', {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/addmeal`, {
       method:"POST",
       headers: {
         'Content-Type': 'application/json'  
